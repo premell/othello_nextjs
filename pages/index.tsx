@@ -1,16 +1,34 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import { GameBoard } from '../components/GameBoard'
-import styles from '../styles/Home.module.css'
-
-
+import Disk from '../public/classes/Disk'
 
 const Home: NextPage = () => {
+  const disks: Disk[] = [
+{
+  player: 1,
+  xPos: 3,
+  yPos: 3,
+  },
+    {
+  player: 0,
+  xPos: 3,
+  yPos: 4,
+  },
+    {
+  player: 1,
+  xPos: 4,
+  yPos: 4,
+  },
+    {
+  player: 0,
+  xPos: 4,
+  yPos: 3,
+  },
+  ]
+
   return (
     <>
-      <GameBoard/>
-      <div>hello</div>
+      <GameBoard disks={disks}/>
     </>
   )
 }
